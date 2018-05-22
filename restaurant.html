@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+
+<!-- resturant HTML -->
+
+
+<html>
+
+<head>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!-- Normalize.css for better cross-browser consistency -->
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <title>Restaurant Info</title>
+</head>
+
+<body class="inside">
+  <!-- Beginning header -->
+  <header role="banner">
+    <!-- Beginning nav -->
+    <nav role="navigation"> 
+      <h1><a href="/">Restaurant Reviews</a></h1>
+       <ul class="skiplinks">
+    <li>
+      <a href="#reviews-container">Skip to the Restaurant's Review</a>
+    </li>
+  </ul>
+     
+    </nav>
+    <!-- Beginning breadcrumb -->
+    <ul id="breadcrumb" >
+      <li><a href="/">Home</a></li>
+    </ul>
+    <!-- End breadcrumb -->
+    <!-- End nav -->
+  </header>
+  <!-- End header -->
+
+  <!-- Beginning main -->
+  <main id="maincontent" role="main">
+    <!-- Beginning map -->
+    <section id="map-container">
+      <div id="map"></div>
+    </section>
+    <!-- End map -->
+    <!-- Beginning restaurant -->
+    <section id="restaurant-container">
+      <h1 id="restaurant-name"></h1>
+      <img id="restaurant-img" alt="Restaurant's image">
+      <p id="restaurant-cuisine"></p>
+      <p id="restaurant-address"></p>
+      <table id="restaurant-hours"></table>
+    </section>
+    <!-- end restaurant -->
+    <!-- Beginning reviews -->
+    <section id="reviews-container">
+      <ul id="reviews-list"></ul>
+    </section>
+    <!-- End reviews -->
+  </main>
+  <!-- End main -->
+
+  <!-- Beginning footer -->
+  <footer id="footer" role="contentinfo">
+    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+    <a href="#Top" class="skiplinks-top">Go back to Top of the Page</a>
+
+  </footer>
+  <!-- End footer -->
+
+  <!-- Beginning scripts -->
+  <!-- Database helpers -->
+  <script type="text/javascript" src="js/dbhelper.js"></script>
+  <!-- Main javascript file -->
+  <script type="text/javascript" src="js/restaurant_info.js"></script>
+  <!-- Google Maps -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtyIe3p526K312qFKA3Un4qoHS4G3MUtk&libraries=places&callback=initMap"></script>
+  <script> if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').then(function (registration) {
+          console.log('ServiceWorker registered ');
+        }, function (error) { console.log('ServiceWorker didnt register ');
+        }); });  }
+  </script>
+  <!-- End scripts -->
+
+</body>
+
+</html>
